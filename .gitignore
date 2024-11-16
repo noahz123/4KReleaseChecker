@@ -1,0 +1,7 @@
+build/
+dist/
+build.bat
+Movie4KCheckerApp.spec
+MovieDuplicates.py
+Movie4KChecker.py
+credentials.json
