@@ -7,8 +7,9 @@ import threading
 import json
 import ctypes
 import os
+import sys
 
-class Plex4KChecker(tk.Tk):
+class ReleaseChecker(tk.Tk):
     def __init__(self):
         super().__init__()
         try:
@@ -32,6 +33,13 @@ class Plex4KChecker(tk.Tk):
         self.title("Plex 4K Release Checker")
         self.geometry("900x900")
         self.resizable(False, False)
+        self.title("4KReleaseChecker")
+        if getattr(sys, 'frozen', False):
+            icon_path = os.path.join(sys._MEIPASS, '4KReleaseChecker.ico')
+        else:
+            icon_path = '4KReleaseChecker.ico'
+        print(icon_path)
+        self.iconbitmap(icon_path)
 
         # Load saved credentials if they exist
         self.credentials = self.load_credentials()
@@ -294,5 +302,5 @@ class Plex4KChecker(tk.Tk):
         thread.start()
 
 if __name__ == "__main__":
-    app = Plex4KChecker()
+    app = ReleaseChecker()
     app.mainloop()
