@@ -274,11 +274,15 @@ class ReleaseChecker(tk.Tk):
                         
                         date = datetime.strptime(has_4k.get("release_date").split("T")[0], "%Y-%m-%d")
                         formatted_date = date.strftime("%m-%d-%Y")
+                        if has_4k.get("type") == 5:
+                            format = "Physical"
+                        if has_4k.get("type") == 4:
+                            format = "Digital"
                         
                         if date > current_date:
-                            self.append_result(f"{title} ({year})\nTo Be Released: {formatted_date}\n\n")
+                            self.append_result(f"{title} ({year})\nFormat: {format}\nTo Be Released: {formatted_date}\n\n")
                         else:
-                            self.append_result(f"{title} ({year})\nAlready Released: {formatted_date}\n\n")
+                            self.append_result(f"{title} ({year})\nFormat: {format}\nAlready Released: {formatted_date}\n\n")
             
             # Final status update
             self.status_label.config(
