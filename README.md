@@ -11,4 +11,6 @@ You can find your Plex Server URL in Plex Web App > Settings > Settings > Remote
   
 Some results may not be accurate. This is determined by TMDB, not this app. However, false positives seem very rare.  
   
-PC users can use the exe from releases page, Mac users can download the py file and run it with python.
+PC users can use the exe from releases page, Mac users can download the py file and run it with python.  
+  
+This app is being actively developed so there may be some bugs.
